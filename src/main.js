@@ -3,6 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import FastClick from 'fastclick'
+
+//  使用 Fastclick 解决移动端的点击延迟问题 
+if( 'addEventListener' in document) {
+  document.addEventListener('DOMContentLoaded',function() {
+    FastClick.attach(document.body);
+  },false);
+}
 
 Vue.config.productionTip = false
 

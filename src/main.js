@@ -2,8 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import '../src/common/css/reset.css'
+import '../src/common/style/reset.css'
 import router from './router'
+import './common/js/rem'
 import FastClick from 'fastclick'
 
 //  使用 Fastclick 解决移动端的点击延迟问题 

@@ -1,0 +1,104 @@
+@mainColor:#3190e8;
+
+.clearfix:before, .clearfix:after{
+    content:'';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+// 定义宽高
+.wh(@width,@height) {
+    width: @width;
+    height: @height;
+}
+
+// 字体颜色
+.fc(@fcolor) {
+    color: @fcolor;
+}
+
+// 固定定位的全屏
+.fullScreen() {
+    position: fixed;
+    top:0;
+    left:0;
+    .wh(100%,100%);
+}
+
+//  边框圆角
+.br(@radius) {
+    border-radius: @radius;
+}
+
+// 背景图片和尺寸大小
+.bis(@url) {
+    background-image: @url;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+//  定位:水平垂直居中
+.center() {
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate3d(-50%,-50%,0);
+}
+
+// 定位:水平居中
+.ch() {
+    position: absolute;
+    left:50%;
+    transform: translate3d(-50%,0,0);
+}
+// 定位:垂直居中
+.cv() {
+    position: absolute;
+    top: 50%;
+    transform: translate3d(0,-50%,0);
+}
+
+// 单行显示
+.one-line-cut() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+// 一像素边框
+.one-px-border(@color) {
+    position: relative;
+    &:after{
+        content:'';
+        position: absolute;
+        bottom:0;
+        left:0;
+        width: 100%;
+        height: 1px;
+        background-color: @color;
+        -webkit-transform-origin: left bottom;
+        transform-origin: left bottom;
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2.0) {
+        &:after {
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+    }
+    /* 3倍屏 */
+    @media only screen and (-webkit-min-device-pixel-ratio: 3.0) {
+        &:after {
+            -webkit-transform: scaleY(0.33);
+            transform: scaleY(0.33);
+        }
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio:1.5) {
+        &:after {
+            -webkit-transform: scaleY(0.66);        
+            transform: scaleY(0.66);
+        }
+    }
+}

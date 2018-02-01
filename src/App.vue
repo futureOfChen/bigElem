@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view/>
+    <transition name="fade">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
@@ -10,7 +12,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang='less'>
+@import './common/style/animate.min.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -19,4 +22,16 @@ export default {
   color: #2c3e50;
   /* margin-top: 60px; */
 }
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  transition: all .5s ease-in-out;
+}
+.fade-leave-active {
+  opacity: 0;
+  transition: all .1s ease-in-out;
+}
+
 </style>

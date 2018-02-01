@@ -1,6 +1,6 @@
 <template>
  <div class="home">
-     <v-header>
+     <v-header :signinUp='true'  >
        <span slot="logo" class="head_logo" @click="reload">ele.me</span>
      </v-header>
 
@@ -25,9 +25,6 @@
          </router-link>
        </ul>
      </section>
-     
-      <keep-alive>
-      
       
      <section class="group_city_container">
        <ul class="letter_classify">
@@ -43,8 +40,6 @@
          </li>
        </ul>
      </section>
-
-     </keep-alive>
      
  </div>
 </template>
@@ -70,7 +65,6 @@ export default {
       this.guessCityid = res.id;
     }),
     hotCity().then(res => {
-      console.log(res);
       this.hotcity = res;
     }),
     groupCity().then( res => {

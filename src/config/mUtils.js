@@ -8,17 +8,17 @@ export const setStore = (name, value) => {
         value = JSON.stringify(value);
     }
 
-    widow.localStorage.setItem(name,value);
+    window.localStorage.setItem(name,value);
 }
 
 // 获取localStorage
 export const getStore = name => {
     if(!name) return ;
-    return widow.localStorage.getItem(name);
+    return window.localStorage.getItem(name);
 }
 
 // 删除localStorage
 export const removeStore = name => {
     if(!name) return ;
-    widow.localStorage.removeItem(name);
+    window.localStorage.removeItem(name);
 }

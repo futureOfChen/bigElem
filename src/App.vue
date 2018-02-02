@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style scoped lang='less'>
+<style scoped lang='scss'>
 @import './common/style/animate.min.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
